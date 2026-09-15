@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>India Affairs — 1960 to 2026</title>
+<style>
+:root{--n:#102b45;--o:#e8752c;--g:#14865b;--p:#f6f3ed;--i:#17222c;--m:#697680;--l:#e3ddd3}
+*{box-sizing:border-box}body{margin:0;background:var(--p);color:var(--i);font-family:Arial,sans-serif}
+header{height:72px;background:#fff;border-bottom:1px solid var(--l);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:5}.logo{font-weight:900;letter-spacing:.1em}.logo b{font-size:25px;margin-right:8px}.live{font-size:11px;font-weight:800;color:var(--g);background:#edf8f2;border-radius:999px;padding:7px 10px}
+.hero{background:linear-gradient(135deg,#102b45,#1a4b70);color:#fff;padding:58px 5% 48px}.hero-in{max-width:1100px;margin:auto}.k{font-size:11px;font-weight:800;letter-spacing:.18em;color:#ffd2ad}.hero h1{font-family:Georgia,serif;font-size:clamp(42px,6vw,76px);line-height:.98;margin:14px 0}.hero h1 span{color:#ffd0a8}.hero p{max-width:760px;color:#d7e1e9;line-height:1.65}
+.controls{margin-top:28px;background:#fff;border-radius:17px;padding:14px;display:grid;grid-template-columns:1fr 180px 150px;gap:10px;box-shadow:0 20px 50px #0003}.controls label{display:block;color:var(--m);font-size:10px;font-weight:800;text-transform:uppercase;margin:0 0 5px 4px}.controls input,.controls select{height:48px;width:100%;border:1px solid #d9d2c8;border-radius:10px;padding:0 12px;font-size:15px;background:#fbfaf8}.controls button{height:48px;border:0;border-radius:10px;background:var(--o);color:#fff;font-weight:800;cursor:pointer}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.quick button{border:1px solid #ffffff33;background:#ffffff12;color:#fff;padding:8px 11px;border-radius:999px;cursor:pointer;font-size:12px}
+main{max-width:1100px;margin:30px auto;padding:0 5% 70px}.datebar{background:#fff;border:1px solid var(--l);border-radius:16px;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 12px 30px #0000000a}.bigdate{font-family:Georgia,serif;font-size:28px;font-weight:700}.weekday{color:var(--m);margin-top:3px}.status{font-size:11px;font-weight:800;padding:7px 10px;border-radius:999px;background:#eef8f2;color:var(--g)}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 285px;gap:25px;margin-top:30px}h2{font-family:Georgia,serif;font-size:32px;margin:0}.sub{color:var(--m);font-size:13px;margin-top:5px}.events{margin-top:20px;display:grid;gap:12px}.event{background:#fff;border:1px solid var(--l);border-radius:15px;padding:19px}.meta{font-size:10px;color:var(--o);font-weight:900;letter-spacing:.1em}.event h3{font-size:18px;margin:8px 0}.event p{color:#4e5b65;line-height:1.6;margin:0;font-size:14px}.event a{display:inline-block;margin-top:12px;font-size:11px;font-weight:800;color:var(--n);text-decoration:none}.side{display:grid;gap:12px;align-content:start}.box{background:#fff;border:1px solid var(--l);border-radius:15px;padding:19px}.box h3{margin:0 0 8px}.box p,.box li{font-size:13px;color:var(--m);line-height:1.6}.coverage{font-size:30px;font-weight:900;color:var(--n)}.notice{background:#fff8ed;border:1px solid #efd8ba;color:#795a36;padding:17px;border-radius:14px;margin-top:18px;font-size:13px;line-height:1.6}.loading{padding:28px;background:#fff;border:1px solid var(--l);border-radius:14px;color:var(--m)}.hidden{display:none!important}
+@media(max-width:800px){.controls{grid-template-columns:1fr 1fr}.datefield{grid-column:1/-1}.layout{grid-template-columns:1fr}}@media(max-width:560px){.controls{grid-template-columns:1fr}.datefield{grid-column:auto}.datebar{align-items:flex-start;gap:12px}.bigdate{font-size:23px}}
+footer{text-align:center;border-top:1px solid var(--l);padding:25px;color:var(--m);font-size:11px}
+</style>
+</head>
+<body>
+<header><div class="logo"><b>🇮🇳</b> INDIA AFFAIRS</div><div class="live">1960 — 2026 • LIVE</div></header>
+<section class="hero"><div class="hero-in">
+<div class="k">INDIAN HISTORY & CURRENT AFFAIRS</div>
+<h1>What happened in India<br><span>on this day?</span></h1>
+<p>Select any date from <strong>1960 to 2026</strong>. The portal searches the corresponding India timeline and displays events recorded for that exact day.</p>
+<div class="controls">
+<div class="datefield"><label>Date</label><input id="date" type="date" min="1960-01-01" max="2026-12-31"></div>
+<div><label>Year</label><select id="year"></select></div>
+<button id="go">Explore this day →</button>
+</div>
+<div class="quick">
+<button data-d="1960-05-01">1 May 1960</button><button data-d="1961-12-19">19 Dec 1961</button>
+<button data-d="1975-06-25">25 Jun 1975</button><button data-d="1991-07-24">24 Jul 1991</button>
+<button data-d="2014-05-26">26 May 2014</button><button data-d="2016-11-08">8 Nov 2016</button><button data-d="2020-03-24">24 Mar 2020</button>
+</div></div></section>
+<main>
+<div class="datebar"><div><div id="bigdate" class="bigdate"></div><div id="weekday" class="weekday"></div></div><div id="status" class="status">Ready</div></div>
+<div class="layout"><section><h2>Events in India</h2><div id="count" class="sub"></div><div id="loading" class="loading hidden">Searching the historical record…</div><div id="events" class="events"></div>
+<div class="notice"><strong>Data note:</strong> This demo dynamically reads public reference material. A production exam portal should use a curated database with primary-source citations.</div></section>
+<aside class="side"><div class="box"><h3>Coverage</h3><div class="coverage">1960–2026</div><p>Every calendar date is selectable, including leap day.</p></div>
+<div class="box"><h3>Categories</h3><ul><li>Polity & governance</li><li>Economy</li><li>Defence</li><li>Science & space</li><li>Society</li><li>Sports</li><li>International relations</li></ul></div>
+<div class="box"><h3>Source strategy</h3><p>Historical timelines provide discovery; important events should be checked against official archives.</p></div></aside></div></main>
+<footer>India Affairs Portal • Dynamic 1960–2026 demo</footer>
+<script>
+const API="https://en.wikipedia.org/w/api.php";
+const dateEl=document.getElementById("date"),yearEl=document.getElementById("year"),eventsEl=document.getElementById("events"),loading=document.getElementById("loading"),statusEl=document.getElementById("status"),bigdate=document.getElementById("bigdate"),weekday=document.getElementById("weekday"),count=document.getElementById("count");
+const cache=new Map();
+for(let y=1960;y<=2026;y++){let o=document.createElement("option");o.value=y;o.textContent=y;yearEl.appendChild(o)}
+let now=new Date(),def=(now.getFullYear()>=1960&&now.getFullYear()<=2026)?now.toISOString().slice(0,10):"2026-01-01";dateEl.value=def;yearEl.value=def.slice(0,4);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function clean(s){return s.replace(/\{\{[^]*?\}\}/g,"").replace(/\[\[([^|\]]+)\|([^\]]+)\]\]/g,"$2").replace(/\[\[([^\]]+)\]\]/g,"$1").replace(/<[^>]+>/g,"").replace(/\s+/g," ").trim()}
+function status(t,ok){statusEl.textContent=t;statusEl.style.background=ok?"#eef8f2":"#fff4e9";statusEl.style.color=ok?"#14865b":"#b85a16"}
+async function page(year){if(cache.has(year))return cache.get(year);let q=new URLSearchParams({action:"query",prop:"extracts|info",explaintext:"1",inprop:"url",redirects:"1",titles:`${year}_in_India`,format:"json",origin:"*"});let r=await fetch(API+"?"+q);if(!r.ok)throw Error();let j=await r.json(),p=Object.values(j.query.pages)[0];if(!p||p.missing!==undefined)throw Error();cache.set(year,p);return p}
+function block(text,label){let lines=text.split(/\r?\n/),target=label.toLowerCase(),start=-1;
+for(let i=0;i<lines.length;i++){let x=lines[i].replace(/[=*#]/g," ").trim().toLowerCase();if(x===target||x.startsWith(target+" ")||x.startsWith(target+" –")||x.startsWith(target+" -")){start=i;break}}
+if(start<0){let re=new RegExp("^\\s*[*-]?\\s*"+label.replace(" ","\\s+")+"\\s*[–:-]?","im"),m=text.match(re);if(m)start=text.slice(0,m.index).split(/\r?\n/).length-1}
+if(start<0)return[];let out=[];for(let i=start+1;i<lines.length;i++){let x=lines[i].trim();if(/^={2,6}[^=].*={2,6}$/.test(x))break;if(x)out.push(clean(x.replace(/^[-*]\s*/,"")))}return out}
+function render(rows,year,label){eventsEl.innerHTML="";if(!rows.length){eventsEl.innerHTML='<div class="notice"><strong>No date-specific entry was found.</strong><br><br>This does not prove that nothing happened; historical pages have uneven coverage. A curated database is needed for complete day-by-day coverage.</div>';count.textContent="0 events found";return}
+rows.filter(x=>x.length>5).slice(0,30).forEach((x,i)=>{let p=x.split(/\s+[—–-]\s+/),title=p.length>1&&p[0].length<140?p[0]:label+" — India",body=p.length>1?p.slice(1).join(" — "):x,c=document.createElement("article");c.className="event";c.innerHTML=`<div class="meta">${year} • INDIA • EVENT ${i+1}</div><h3>${esc(title)}</h3><p>${esc(body)}</p><a href="https://en.wikipedia.org/wiki/${year}_in_India" target="_blank" rel="noopener">Open source timeline ↗</a>`;eventsEl.appendChild(c)});count.textContent=`${eventsEl.children.length} events found`}
+async function load(){let v=dateEl.value;if(!v)return;let y=+v.slice(0,4),d=new Date(v+"T00:00:00"),label=`${d.getDate()} ${d.toLocaleString("en-US",{month:"long"})}`;bigdate.textContent=new Intl.DateTimeFormat("en-IN",{day:"numeric",month:"long",year:"numeric"}).format(d);weekday.textContent=new Intl.DateTimeFormat("en-IN",{weekday:"long"}).format(d);eventsEl.innerHTML="";loading.classList.remove("hidden");status("Searching…",false);try{let p=await page(y);render(block(p.extract||"",label),y,label);status("Loaded",true)}catch(e){eventsEl.innerHTML='<div class="notice"><strong>Could not load the historical source.</strong><br>Please check your internet connection and try again.</div>';status("Unavailable",false)}finally{loading.classList.add("hidden")}}
+document.getElementById("go").onclick=load;dateEl.onchange=()=>yearEl.value=dateEl.value.slice(0,4);yearEl.onchange=()=>{dateEl.value=yearEl.value+"-"+dateEl.value.slice(5);load()};document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{dateEl.value=b.dataset.d;yearEl.value=b.dataset.d.slice(0,4);load()});load();
+</script>
+</body></html>
